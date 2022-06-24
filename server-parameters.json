@@ -2,5 +2,13 @@
 	{
 		"ParameterKey": "EnvironmentName",
 		"ParameterValue": "UdacityProject"
+	},
+    {
+		"ParameterKey": "MinInstances",
+		"ParameterValue": "3"
+	},
+    {
+		"ParameterKey": "MaxInstances",
+		"ParameterValue": "5"
 	}
 ]

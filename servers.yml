@@ -6,6 +6,14 @@ Parameters:
   EnvironmentName:
     Description: An environment name that will be prefixed to resource names
     Type: String
+  MinInstances:
+    Description: A minimum number of instances for autoscaling group
+    Type: String
+    Default: '3'
+  MaxInstances:
+    Description: A maximum number of instances for autoscaling group
+    Type: String
+    Default: '5'
 
 Resources:
 
@@ -73,8 +81,8 @@ Resources:
           !Sub "${EnvironmentName}-PRIV-NETS"
       LaunchConfigurationName:
         Ref: WebAppLaunchConfig
-      MinSize: '3'
-      MaxSize: '5'
+      MinSize: !Ref MinInstances
+      MaxSize: !Ref MaxInstances
       HealthCheckGracePeriod: 60
       HealthCheckType: ELB
       TargetGroupARNs:
