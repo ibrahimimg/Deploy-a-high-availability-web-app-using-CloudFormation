@@ -139,4 +139,4 @@ Outputs:
   # it's nice to output the URL to it here, so that we don't have to go to the console to get it.
   WebAppLoadBalancerURL:
     Description: The URL of the Web App Load Balancer
-    Value: !GetAtt WebAppLB.DNSName
+    Value: !Join ["",["http://",!GetAtt WebAppLB.DNSName]]
