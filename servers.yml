@@ -39,10 +39,6 @@ Resources:
         FromPort: 80
         ToPort: 80
         CidrIp: 0.0.0.0/0
-      - IpProtocol: tcp
-        FromPort: 22
-        ToPort: 22
-        CidrIp: 0.0.0.0/0
       SecurityGroupEgress:
       - IpProtocol: tcp
         FromPort: 0
@@ -61,7 +57,6 @@ Resources:
           cd /var/www/html
           echo "it works! Udagram, Udacity" > index.html
       ImageId: ami-00ddb0e5626798373
-      KeyName: VocareumKey2
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.small
